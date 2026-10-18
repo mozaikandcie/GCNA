@@ -5,7 +5,7 @@
 
   var CFG = window.GCNA_CONFIG || {};
   var root = document.documentElement;
-  var reduceMotion = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reduceMotion = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches && !root.classList.contains('motion-on');
   var $ = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
   var lastFocus = null;
@@ -57,7 +57,7 @@
     var pl = $('#preloader');
     if (!pl || !root.classList.contains('has-preload')) { onDone(); return; }
     var fill = $('#pl-fill');
-    var MIN = 1100, MAX = 6000;           // durée mini (lisible) et maxi (garde-fou), en ms
+    var MIN = reduceMotion ? 500 : 1100, MAX = 6000;   // durée mini (lisible) et maxi (garde-fou), en ms
     var t0 = Date.now(), loaded = 0, shown = 0, over = false;
     var images = ['assets/images/hero.jpg', 'assets/images/logo-gcna.png'];
     var total = images.length + 2;        // + polices + événement load

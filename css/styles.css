@@ -129,10 +129,13 @@ html.has-preload #preloader{display:flex}
 .page-nav{position:fixed;top:0;left:0;right:0;background:#0d0808;border-bottom:1px solid rgba(255,255,255,.08);padding:16px clamp(16px,5vw,40px);z-index:30}
 .page-nav a{color:#fff;font-weight:700}
 
-/* Mouvement réduit */
+/* Mouvement réduit (réglage système) — sans effet si ?motion=on */
 @media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .mqtrack{animation:none!important;overflow-x:auto}
-  #intro,#preloader{display:none!important}
-  html.has-intro,html.has-preload{overflow:auto}
+  html:not(.motion-on){scroll-behavior:auto}
+  html:not(.motion-on) .mqtrack{animation:none!important;overflow-x:auto}
+  html:not(.motion-on) #intro{display:none!important}
+  /* preloader sobre : logo fixe, pas de halo ni de flottement */
+  html:not(.motion-on) .pl-logo{animation:none}
+  html:not(.motion-on) #preloader::before{animation:none;opacity:.6}
+  html:not(.motion-on) #preloader,html:not(.motion-on) #preloader.pl-out{transition-duration:.01s}
 }

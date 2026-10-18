@@ -23,18 +23,20 @@
 <link rel="stylesheet" href="css/fontawesome.css">
 <link rel="stylesheet" href="css/styles.css">
 <script>
-/* Preloader + intro : affichés à la première visite seulement (sessionStorage), jamais en mouvement réduit.
-   Intro : ?intro=lettres | particules (forcer) | aucune (couper). Preloader : ?preloader=aucune (couper). */
+/* Preloader + intro : première visite de la session seulement (sessionStorage).
+   Mouvement réduit (réglage système) : preloader sobre, pas d'intro animée.
+   Paramètres : ?motion=on (forcer les animations, ignore le réglage système et la 1re visite)
+                ?intro=lettres | particules (forcer l'intro) | aucune (la couper) · ?preloader=aucune (le couper) */
 (function(){try{
   var h=document.documentElement,sp=new URLSearchParams(location.search);
-  var q=sp.get('intro'),pq=sp.get('preloader');
-  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(!reduce){
-    if(pq!=='aucune'&&!sessionStorage.getItem('gcna-preload')){h.classList.add('has-preload');}
-    if(q!=='aucune'&&(!sessionStorage.getItem('gcna-intro')||q==='lettres'||q==='particules')){
-      h.classList.add('has-intro');
-      if(q==='particules')h.classList.add('intro-particles');
-    }
+  var q=sp.get('intro'),pq=sp.get('preloader'),mo=sp.get('motion')==='on';
+  var pref=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reduce=pref&&!mo;
+  if(mo)h.classList.add('motion-on');
+  if(pq!=='aucune'&&(mo||!sessionStorage.getItem('gcna-preload')))h.classList.add('has-preload');
+  if(!reduce&&q!=='aucune'&&(mo||q==='lettres'||q==='particules'||!sessionStorage.getItem('gcna-intro'))){
+    h.classList.add('has-intro');
+    if(q==='particules')h.classList.add('intro-particles');
   }
   /* garde-fou si le JS échoue : on libère la page */
   setTimeout(function(){h.classList.remove('has-preload','has-intro')},15000);
