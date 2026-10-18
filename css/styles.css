@@ -1,0 +1,123 @@
+/* Le Grand Chanté Nwèl d'Ambyans — feuille de style principale
+   (les styles de composants restent en ligne dans index.html, hérités de la maquette) */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+section[id],div[id]{scroll-margin-top:80px}
+body{margin:0;font-family:'Hanken Grotesk',system-ui,sans-serif;background:#140c0c;color:#f5ece6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;margin:0;line-height:1.02;letter-spacing:-.01em}
+p{margin:0}
+a{color:#f2ba4c;text-decoration:none}
+a:hover{color:#e11d54}
+button{font-family:inherit}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes introLogo{0%{opacity:0;transform:translateY(18px) scale(.86)}55%{opacity:1;transform:translateY(0) scale(1.04)}100%{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes introRise{0%{opacity:0;transform:translateY(22px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes introLine{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+@keyframes introGlow{0%,100%{opacity:.35}50%{opacity:.7}}
+@keyframes introLetter{0%{opacity:0;transform:translateY(.6em) rotate(6deg);filter:blur(6px)}100%{opacity:1;transform:none;filter:blur(0)}}
+@keyframes introOut{0%{opacity:1}100%{opacity:0;visibility:hidden}}
+.mq:hover .mqtrack{animation-play-state:paused}
+details>summary{list-style:none;cursor:pointer}
+details>summary::-webkit-details-marker{display:none}
+
+/* ==========================================================
+   Mise en page responsive (remplace les valeurs calculées en JS)
+   ========================================================== */
+.skip{position:absolute;left:-9999px;top:8px;z-index:200;background:#e11d54;color:#fff;padding:10px 16px;border-radius:8px;font-weight:700}
+.skip:focus{left:8px}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid #f2ba4c;outline-offset:3px}
+
+/* Navigation */
+.nav-bg{opacity:0;transition:opacity .25s ease}
+body.scrolled .nav-bg{opacity:1}
+.nav-inner{padding:18px 40px}
+.nav-right{display:flex;align-items:center;gap:26px}
+.nav-links{display:flex;align-items:center;gap:22px}
+.nav-social{display:flex;align-items:center;gap:14px;font-size:16px}
+.burger{display:none;align-items:center;justify-content:center}
+@media (max-width:1023px){
+  .nav-inner{padding:14px 16px}
+  .nav-right{gap:10px}
+  .nav-links,.nav-social{display:none}
+  .burger{display:flex}
+}
+@media (min-width:1024px){#mobile-menu{display:none!important}}
+
+/* Bouton retour en haut */
+.totop{opacity:0;transform:translateY(14px);pointer-events:none}
+body.scrolled .totop{opacity:1;transform:none;pointer-events:auto}
+
+/* Lieu : carte d'adresse sur le plan (desktop) / sous le plan (mobile) */
+.lieu{padding-bottom:0}
+.lieu-card{position:absolute;top:50%;left:40px;transform:translateY(-50%);width:320px;max-width:calc(100% - 32px);margin:0;border-radius:18px;padding:28px;box-shadow:0 20px 60px rgba(0,0,0,.4);color:#201812}
+@media (max-width:759px){
+  .lieu{padding-bottom:40px}
+  .lieu-card{position:relative;top:auto;left:auto;transform:none;width:auto;margin:-60px 16px 0}
+}
+
+/* Intro */
+#intro{display:none;position:fixed;inset:0;z-index:100;background:#0d0808;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:24px;text-align:center;cursor:pointer;animation:introOut .7s ease 3.5s forwards}
+html.has-intro{overflow:hidden}
+html.has-intro #intro{display:flex}
+html.intro-particles #intro{animation:introOut .5s ease 3.6s forwards}
+.intro-word{display:flex;justify-content:center;flex-wrap:wrap}
+.intro-word span{display:inline-block;white-space:pre;opacity:0;animation:introLetter .6s cubic-bezier(.2,.8,.2,1) forwards}
+.intro-w1{font-family:'Caveat',cursive;font-size:clamp(34px,6vw,64px);color:#f2ba4c;line-height:1}
+.intro-w2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(52px,11vw,140px);color:#fff;line-height:.95;letter-spacing:-.02em}
+.intro-w3{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(40px,8vw,100px);color:#e11d54;line-height:1}
+.intro-line{width:min(240px,50vw);height:3px;margin-top:22px;background:linear-gradient(90deg,#e11d54,#f2ba4c,#1f9d57);transform-origin:left;transform:scaleX(0);animation:introLine 1s ease 1.4s forwards}
+#intro canvas{width:100%;height:100%;display:block}
+html.intro-particles #intro .intro-word,html.intro-particles #intro .intro-line{display:none}
+
+/* Slider artistes */
+.mq.paused .mqtrack,.mq:focus-within .mqtrack{animation-play-state:paused}
+.mq-toggle{margin-top:14px;border:1px solid rgba(255,255,255,.25);background:transparent;color:#f5ece6;cursor:pointer;font-weight:600;font-size:13px;padding:8px 16px;border-radius:999px}
+
+/* Tradition */
+.more{margin-top:20px;max-width:56ch}
+.more summary{display:inline-flex;align-items:center;gap:8px;color:#f2ba4c;font-weight:700;font-size:15px}
+.more summary::after{content:"+";font-size:20px;line-height:1}
+.more[open] summary::after{content:"–"}
+.more p{margin-top:12px;font-size:15px;line-height:1.7;color:#f0dcdf}
+.glossary{margin:26px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.glossary div{display:flex;gap:6px;padding:7px 13px;border-radius:999px;border:1px solid rgba(242,186,76,.35);font-size:13px}
+.glossary dt{font-weight:700;color:#f2ba4c}
+.glossary dd{margin:0;color:#f0dcdf}
+
+/* Jeux : mentions */
+.legal-note{margin-top:14px;font-size:13px}
+.legal-note a{color:#b8a79b;text-decoration:underline}
+
+/* FAQ */
+.faq{display:flex;flex-direction:column;gap:10px}
+.faq details{background:#1e1414;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:0 20px}
+.faq summary{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-weight:700;font-size:16px;color:#fff}
+.faq summary::after{content:"+";color:#e11d54;font-size:22px;line-height:1;flex:none}
+.faq details[open] summary::after{content:"–"}
+.faq p{padding:0 0 18px;font-size:15px;line-height:1.65;color:#b8a79b}
+
+/* Modale e-mail */
+.consent{display:flex;gap:8px;align-items:flex-start;font-size:12px;line-height:1.5;color:#b8a79b;margin-bottom:24px}
+.consent input{margin-top:2px;flex:none}
+.consent a{color:#f2ba4c;text-decoration:underline}
+
+/* Pied de page */
+.legal-links{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:26px;font-size:12px}
+.legal-links a{color:#8f8078;text-decoration:underline}
+
+/* Pages légales */
+.page{max-width:760px;margin:0 auto;padding:110px clamp(16px,5vw,40px) 80px}
+.page h1{font-size:clamp(32px,5vw,48px);font-weight:800;color:#fff;margin-bottom:24px}
+.page h2{font-size:22px;margin:32px 0 10px;color:#fff}
+.page p,.page li{font-size:16px;line-height:1.7;color:#d8c9bd;margin-bottom:12px}
+.page .todo{background:#3a2412;border:1px solid #f0b429;color:#ffd98a;border-radius:12px;padding:14px 18px;font-size:14px;margin-bottom:28px}
+.page-nav{position:fixed;top:0;left:0;right:0;background:#0d0808;border-bottom:1px solid rgba(255,255,255,.08);padding:16px clamp(16px,5vw,40px);z-index:30}
+.page-nav a{color:#fff;font-weight:700}
+
+/* Mouvement réduit */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .mqtrack{animation:none!important;overflow-x:auto}
+  #intro{display:none!important}
+  html.has-intro{overflow:auto}
+}

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le Grand Chanté Nwèl d'Ambyans — 19 décembre 2026, Lormont</title>
+<meta name="description" content="Samedi 19 décembre 2026 à Lormont : un grand village créole de 11h à 1h du matin. Chants de Noël, spectacle, marché, animations. Entrée gratuite.">
+<meta name="theme-color" content="#0d0808">
+<link rel="icon" type="image/png" href="assets/images/logo-gcna.png">
+<!-- TODO: remplacer https://grandchantenwel.fr/ par le domaine définitif (canonical, Open Graph, JSON-LD) -->
+<link rel="canonical" href="https://grandchantenwel.fr/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Le Grand Chanté Nwèl d'Ambyans">
+<meta property="og:title" content="Le Grand Chanté Nwèl d'Ambyans — 19 décembre 2026">
+<meta property="og:description" content="Samedi 19 décembre 2026 à Lormont : un grand village créole de 11h à 1h du matin. Chants de Noël, spectacle, marché, animations. Entrée gratuite.">
+<meta property="og:url" content="https://grandchantenwel.fr/">
+<meta property="og:image" content="https://grandchantenwel.fr/assets/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/fontawesome.css">
+<link rel="stylesheet" href="css/styles.css">
+<script>
+/* Intro : affichée à la première visite seulement (sessionStorage), jamais en mouvement réduit.
+   Forcer avec ?intro=lettres ou ?intro=particules ; désactiver avec ?intro=aucune. */
+(function(){try{
+  var q=new URLSearchParams(location.search).get('intro');
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var seen=sessionStorage.getItem('gcna-intro');
+  if(q==='aucune'||reduce||(seen&&q!=='lettres'&&q!=='particules'))return;
+  var h=document.documentElement;
+  h.classList.add('has-intro');
+  if(q==='particules')h.classList.add('intro-particles');
+  setTimeout(function(){h.classList.remove('has-intro')},7000); /* garde-fou si le JS échoue */
+}catch(e){}})();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Le Grand Chanté Nwèl d'Ambyans",
+  "description": "Un grand village créole le temps d'une journée : chants de Noël, spectacle, marché, animations et ambyans jusqu'au bout de la nuit.",
+  "startDate": "2026-12-19T11:00:00+01:00",
+  "endDate": "2026-12-20T01:00:00+01:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": "Salle Léo Lagrange",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "rue Lavergne",
+      "postalCode": "33310",
+      "addressLocality": "Lormont",
+      "addressCountry": "FR"
+    }
+  },
+  "image": [
+    "https://grandchantenwel.fr/assets/images/og-image.jpg"
+  ],
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "url": "https://www.helloasso.com/associations/association-ambyanstwopikal/evenements/entree-grand-chante-nwel-d-ambyans-2026"
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "Association Ambyans Twopikal",
+    "url": "https://www.helloasso.com/associations/association-ambyanstwopikal"
+  }
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<div id="intro" role="presentation" aria-hidden="true">
+    <div class="intro-word intro-w1" data-text="Le Grand"></div>
+    <div class="intro-word intro-w2" data-text="Chanté Nwèl"></div>
+    <div class="intro-word intro-w3" data-text="d'Ambyans"></div>
+    <div class="intro-line"></div>
+  </div>
+
+<div style="overflow-x:hidden;background:#140c0c">
+
+
+  <!-- ============ NAV ============ -->
+  <div style="position:fixed;top:0;left:0;right:0;z-index:30">
+    <div style="position:absolute;inset:0;background:#0d0808;border-bottom:1px solid rgba(255,255,255,.08);box-shadow:0 8px 30px rgba(0,0,0,.35)" class="nav-bg"></div>
+    <div style="position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:16px" class="nav-inner">
+    <div style="display:flex;align-items:center;gap:10px;font-family:'Bricolage Grotesque';font-weight:800;font-size:22px;color:#fff;letter-spacing:.02em"><img src="assets/images/logo-gcna.png" alt="GCNA" style="height:34px;width:auto;display:block"> GCNA</div>
+    <div class="nav-right">
+      <div class="nav-links">
+      <a href="#tradition" style="color:#f5ece6;font-weight:600;font-size:14px">La tradition</a>
+      <a href="#agenda" style="color:#f5ece6;font-weight:600;font-size:14px">Programme</a>
+      <a href="#artistes" style="color:#f5ece6;font-weight:600;font-size:14px">Artistes</a>
+      <a href="#inscription" style="color:#f5ece6;font-weight:600;font-size:14px">S'inscrire</a><a href="#restauration" style="color:#f5ece6;font-weight:600;font-size:14px">Restauration</a><a href="#boutique" style="color:#f5ece6;font-weight:600;font-size:14px">Boutique</a>
+      <a href="#benevoles" style="color:#f5ece6;font-weight:600;font-size:14px">Bénévoles</a>
+      </div>
+      <div class="nav-social">
+        <a href="#" aria-label="Facebook" style="color:#f5ece6;display:inline-flex;align-items:center;justify-content:center;min-width:28px;min-height:44px"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram" style="color:#f5ece6;display:inline-flex;align-items:center;justify-content:center;min-width:28px;min-height:44px"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="TikTok" style="color:#f5ece6;display:inline-flex;align-items:center;justify-content:center;min-width:28px;min-height:44px"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+      <button data-action="toggleMenu" aria-label="Menu" class="burger" aria-expanded="false" aria-controls="mobile-menu" style="width:44px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:rgba(13,8,8,.6);color:#fff;font-size:18px;align-items:center;justify-content:center;cursor:pointer"><i class="fa-solid fa-bars" data-burger-icon></i></button>
+    </div>
+    </div>
+    <div id="mobile-menu" data-if="menuOpen" hidden>
+      <div style="position:relative;z-index:1;background:#0d0808;border-bottom:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;padding:6px 16px 18px">
+        <a href="#tradition" data-action="closeMenu" style="color:#f5ece6;font-weight:600;font-size:17px;padding:14px 4px;border-bottom:1px solid rgba(255,255,255,.08)">La tradition</a>
+        <a href="#agenda" data-action="closeMenu" style="color:#f5ece6;font-weight:600;font-size:17px;padding:14px 4px;border-bottom:1px solid rgba(255,255,255,.08)">Programme</a>
+        <a href="#artistes" data-action="closeMenu" style="color:#f5ece6;font-weight:600;font-size:17px;padding:14px 4px;border-bottom:1px solid rgba(255,255,255,.08)">Artistes</a>
+        <a href="#inscription" data-action="closeMenu" style="color:#f5ece6;font-weight:600;font-size:17px;padding:14px 4px;border-bottom:1px solid rgba(255,255,255,.08)">S'inscrire</a><a href="#restauration" data-action="closeMenu" style="color:#f5ece6;font-weight:600;font-size:17px;padding:14px 4px;border-bottom:1px solid rgba(255,255,255,.08)">Restauration</a><a href="#boutique" data-action="closeMenu" style="color:#f5ece6;font-weight:600;font-size:17px;padding:14px 4px;border-bottom:1px solid rgba(255,255,255,.08)">Boutique</a>
+        <a href="#benevoles" data-action="closeMenu" style="color:#f5ece6;font-weight:600;font-size:17px;padding:14px 4px;border-bottom:1px solid rgba(255,255,255,.08)">Bénévoles</a>
+        <div style="display:flex;gap:12px;padding-top:16px">
+          <a href="#" aria-label="Facebook" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.2);color:#fff;display:flex;align-items:center;justify-content:center;font-size:17px"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.2);color:#fff;display:flex;align-items:center;justify-content:center;font-size:17px"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="TikTok" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.2);color:#fff;display:flex;align-items:center;justify-content:center;font-size:17px"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ HERO PHOTO (courbe) ============ -->
+  <div style="position:relative;height:66vh;min-height:440px;border-radius:0 0 50% 50%/0 0 14% 14%;overflow:hidden">
+    <div data-parallax="0.18" style="position:absolute;inset:-18% 0;background:linear-gradient(160deg,rgba(20,12,12,.15),rgba(20,12,12,.45)),url(&quot;assets/images/hero.jpg&quot;);background-size:cover;background-position:center 42%;filter:brightness(1.1);will-change:transform"></div>
+  </div>
+
+  <!-- ============ HERO BAND (titre + stats) ============ -->
+  <section id="main" tabindex="-1" style="padding:44px clamp(16px,5vw,40px) 64px;max-width:1180px;margin:0 auto">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:48px;align-items:center">
+      <div>
+        <p style="font-family:'Caveat',cursive;font-size:26px;color:#f2ba4c;margin:0 0 6px">Là où Noël se chante aux couleurs des Antilles</p>
+        <h1 style="font-size:clamp(38px,5.4vw,68px);font-weight:800;color:#fff">Le Grand Chanté Nwèl d'Ambyans</h1>
+        <p style="font-size:16px;line-height:1.6;color:#b8a79b;margin:18px 0 22px;max-width:46ch">Un grand village créole le temps d'une journée : chants de Noël, spectacle, marché, animations et ambyans jusqu'au bout de la nuit. Samedi 19 décembre 2026, de 11h00 à 01h00, à Lormont.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:14px">
+          <a href="https://www.helloasso.com/associations/association-ambyanstwopikal/evenements/entree-grand-chante-nwel-d-ambyans-2026" target="_blank" rel="noopener" style="background:#e11d54;color:#fff;font-weight:700;font-size:16px;padding:15px 28px;border-radius:999px;box-shadow:0 10px 30px rgba(225,29,84,.4)">Je m'inscris (gratuit)</a>
+          <button data-action="openSaveDate" style="cursor:pointer;background:transparent;border:1.5px solid rgba(255,255,255,.35);color:#fff;font-weight:600;font-size:16px;padding:14px 26px;border-radius:999px">Je note la date</button>
+          <a href="#agenda" style="cursor:pointer;color:#f5ece6;font-weight:600;font-size:16px;padding:14px 10px;text-decoration:underline;text-underline-offset:4px">Voir le programme →</a>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-around;gap:16px;text-align:center">
+        <div><div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4vw,46px);color:#fff"><span id="artist-count">8</span></div><div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#b8a79b;margin-top:4px">Artistes<br>&amp; groupes</div></div>
+        <div style="border-left:1px solid rgba(255,255,255,.14)"></div>
+        <div><div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4vw,46px);color:#fff">14h</div><div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#b8a79b;margin-top:4px">de fête<br>non-stop</div></div>
+        <div style="border-left:1px solid rgba(255,255,255,.14)"></div>
+        <div><div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:clamp(30px,4vw,46px);color:#f2ba4c">Gratuit</div><div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#b8a79b;margin-top:4px">entrée<br>pour tous</div></div>
+      </div>
+    </div>
+    <div data-if="showCountdown">
+      <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:44px">
+        <div style="min-width:72px;padding:12px 8px;border-radius:14px;background:#1e1414;border:1px solid rgba(255,255,255,.1);text-align:center"><div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:32px;color:#fff"><span data-cd="d">0</span></div><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8f8078;margin-top:2px">jours</div></div>
+        <div style="min-width:72px;padding:12px 8px;border-radius:14px;background:#1e1414;border:1px solid rgba(255,255,255,.1);text-align:center"><div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:32px;color:#fff"><span data-cd="h">0</span></div><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8f8078;margin-top:2px">heures</div></div>
+        <div style="min-width:72px;padding:12px 8px;border-radius:14px;background:#1e1414;border:1px solid rgba(255,255,255,.1);text-align:center"><div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:32px;color:#fff"><span data-cd="m">0</span></div><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8f8078;margin-top:2px">min</div></div>
+        <div style="min-width:72px;padding:12px 8px;border-radius:14px;background:#1e1414;border:1px solid rgba(255,255,255,.1);text-align:center"><div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:32px;color:#e11d54"><span data-cd="s">0</span></div><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8f8078;margin-top:2px">sec</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRADITION (bande colorée) ============ -->
+  <section id="tradition" style="background:linear-gradient(135deg,#7a2233,#45131f);padding:80px clamp(16px,5vw,40px)">
+    <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:52px;align-items:center">
+      <div>
+        <p style="font-family:'Caveat',cursive;font-size:26px;color:#f2ba4c;margin:0 0 6px">An nou chanté Nwèl ansanm !</p>
+        <!-- TODO: faire valider le titre créole par un locuteur (alternative : « Kisa ki Chanté Nwèl ? ») -->
+        <h2 style="font-size:clamp(32px,4.6vw,52px);font-weight:800;color:#fff">Kisa ki Chanté Nwèl ?</h2>
+        <p style="font-size:16px;line-height:1.75;color:#f0dcdf;margin-top:18px;max-width:56ch">Chaque décembre aux Antilles, on ne chante pas Noël : on le fait vibrer ! Le Chanté Nwèl, c'est ce grand rendez-vous où les cantiques se mêlent aux refrains créoles, où l'on chante en chœur, où l'on improvise, où l'on rit, et où l'on se retrouve autour des anciens comme des tout-petits. Le temps d'une journée, la salle Léo Lagrange devient un grand village créole pour faire vibrer l'esprit de Nwèl et transmettre cet héritage aux nouvelles générations.</p>
+        <details class="more">
+          <summary>En savoir plus sur l'histoire</summary>
+          <!-- TODO: citer une source pour l'origine historique -->
+          <p>Le Chanté Nwèl est une tradition incontournable de la culture antillaise, née aux Antilles françaises à l'époque coloniale. Les cantiques de Noël, chantés à l'église en français, se sont peu à peu enrichis de refrains en créole et de couplets mêlant sacré et profane, avec parfois des improvisations — comment dire — très libres ! D'une histoire née de la contrainte, les Antillais ont fait une fête de partage et de transmission, toujours vivante aujourd'hui.</p>
+        </details>
+        <!-- TODO: valider / compléter le glossaire -->
+        <dl class="glossary" aria-label="Petit glossaire créole">
+          <div><dt>Ambyans</dt><dd>ambiance</dd></div>
+          <div><dt>Nwèl</dt><dd>Noël</dd></div>
+          <div><dt>Chanté Nwèl</dt><dd>chants de Noël antillais</dd></div>
+          <div><dt>Gwoka</dt><dd>musique et danse traditionnelles de Guadeloupe</dd></div>
+          <div><dt>Bokit</dt><dd>sandwich frit antillais</dd></div>
+        </dl>
+      </div>
+      <div style="position:relative;aspect-ratio:4/5;border-radius:18px;overflow:hidden;border:1px solid rgba(242,186,76,.25);display:flex;align-items:center;justify-content:center;text-align:center;padding:16px">
+        <div data-parallax="0.14" style="position:absolute;inset:-16% 0;background:url(&quot;assets/images/tradition.jpg&quot;);background-size:cover;background-position:center;will-change:transform"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AGENDA (moment-cards) ============ -->
+  <!-- TODO programme : nom du groupe « Danse urbaine » ; créneau 18h–20h ; fin du marché (23h) vs fin du spectacle (01h) -->
+  <section id="agenda" style="padding:84px clamp(16px,5vw,40px) 40px;text-align:center">
+    <p style="font-family:'Caveat',cursive;font-size:34px;color:#e11d54;margin:0">Le programme</p>
+    <p style="font-size:16px;color:#b8a79b;max-width:60ch;margin:8px auto 40px">De 11h00 à 01h00 du matin — une journée de fête non-stop, façon village créole. Chausse tes plus belles chaussures de danse et prépare ta plus belle voix !</p>
+    <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px">
+      <div style="position:relative;border-radius:18px;overflow:hidden;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;text-align:left;padding:24px;background:linear-gradient(180deg,rgba(20,12,12,.15),rgba(20,12,12,.85)),url(&quot;assets/images/programme-marche.jpg&quot;) center/cover">
+        <span style="position:absolute;top:18px;left:18px;background:#e11d54;color:#fff;font-weight:700;font-size:12px;padding:6px 14px;border-radius:999px">11h00 → 23h00</span>
+        <h3 style="font-size:30px;font-weight:800;color:#fff">Marché de Noël</h3>
+        <p style="font-size:14px;color:#d8c4c8;margin-top:8px">Stands · animations · défilé · artistes &amp; groupes en live</p>
+      </div>
+      <div style="position:relative;border-radius:18px;overflow:hidden;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;text-align:left;padding:24px;background:linear-gradient(180deg,rgba(20,12,12,.15),rgba(20,12,12,.85)),url(&quot;assets/images/programme-enfants.jpg&quot;) center/cover">
+        <span style="position:absolute;top:18px;left:18px;background:#1f9d57;color:#fff;font-weight:700;font-size:12px;padding:6px 14px;border-radius:999px">14h00 → 18h00</span>
+        <h3 style="font-size:30px;font-weight:800;color:#fff">Espace enfants</h3>
+        <p style="font-size:14px;color:#cfe0d5;margin-top:8px">Jeux · animations · père Noël</p>
+      </div>
+      <div style="position:relative;border-radius:18px;overflow:hidden;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;text-align:left;padding:24px;background:linear-gradient(180deg,rgba(20,12,12,.15),rgba(20,12,12,.85)),url(&quot;assets/images/programme-spectacle.jpg&quot;) center/cover">
+        <span style="position:absolute;top:18px;left:18px;background:#f0b429;color:#201812;font-weight:700;font-size:12px;padding:6px 14px;border-radius:999px">20h00 → 01h00</span>
+        <h3 style="font-size:30px;font-weight:800;color:#fff">Spectacle Chanté Nwèl</h3>
+        <p style="font-size:14px;color:#e6d4b3;margin-top:8px">Chants en chœur · artistes &amp; groupes en live</p>
+      </div>
+    </div>
+    <button data-action="openHoraires" style="margin-top:34px;border:1.5px solid rgba(255,255,255,.3);cursor:pointer;background:transparent;color:#fff;font-weight:700;font-size:15px;padding:14px 26px;border-radius:999px;display:inline-flex;align-items:center;gap:8px">🕑 Voir la grille horaire détaillée</button>
+  </section>
+
+  <!-- ============ BANDEAU GRATUIT ============ -->
+  <section id="inscription" style="padding:40px clamp(16px,5vw,40px) 84px">
+    <!-- TODO: inscription obligatoire ou simplement conseillée ? indiquer la jauge si besoin -->
+    <div style="max-width:1120px;margin:0 auto;background:linear-gradient(100deg,#e11d54,#b3153f);border-radius:20px;padding:clamp(22px,4vw,28px) clamp(20px,4vw,36px);display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between">
+      <div style="max-width:60ch">
+        <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:24px;color:#fff">Entrée gratuite pour tous 🎟️</div>
+        <div style="color:#ffd9e3;font-size:15px;margin-top:4px">Inscription conseillée pour garantir ta place.</div>
+      </div>
+      <a href="https://www.helloasso.com/associations/association-ambyanstwopikal/evenements/entree-grand-chante-nwel-d-ambyans-2026" target="_blank" rel="noopener" style="background:#fff;color:#c1123f;font-weight:700;font-size:15px;padding:15px 26px;border-radius:999px;white-space:nowrap">S'inscrire sur HelloAsso ↗</a>
+    </div>
+  </section>
+
+  <!-- ============ BANDE PHOTO ============ -->
+  <div style="position:relative;height:340px;overflow:hidden;display:flex;align-items:center;justify-content:center">
+    <div data-parallax="0.22" style="position:absolute;inset:-22% 0;background:linear-gradient(180deg,rgba(225,29,84,.12),rgba(20,12,12,.5)),url(&quot;assets/images/bande-photo.jpg&quot;);background-size:cover;background-position:center 40%;will-change:transform"></div>
+  </div>
+
+  <!-- ============ ARTISTES ============ -->
+  <section id="artistes" style="padding:84px 0">
+    <div style="text-align:center;padding:0 clamp(16px,5vw,40px) 12px">
+      <p style="font-family:'Caveat',cursive;font-size:34px;color:#e11d54;margin:0">Sur scène</p>
+      <h2 style="font-size:clamp(30px,4vw,48px);font-weight:800;color:#fff">Artistes &amp; groupes invités</h2>
+      <p style="font-size:15px;color:#b8a79b;margin-top:10px">Clique sur un portrait pour découvrir leurs réseaux.</p>
+      <button type="button" class="mq-toggle" data-action="toggleMarquee" aria-pressed="false">⏸ Mettre le défilement en pause</button>
+      <!-- TODO liens réseaux manquants : Bay Chabon, Ka'dansé, Régine (Gwoka), Dandy Crew, DJ DayanKilla ; photos Régine / DJ / Dandy Crew -->
+    </div>
+    <div class="mq" style="position:relative;overflow:hidden;margin-top:20px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)">
+      <div class="mqtrack" style="display:flex;gap:18px;width:max-content;padding:0 18px;animation:marquee 34s linear infinite">
+        <a class="artist" href="https://www.facebook.com/profile.php?id=61573969982310" target="_blank" rel="noopener" style="flex:none;width:230px;height:290px;position:relative;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;background:linear-gradient(180deg,transparent 55%,rgba(20,12,12,.92)),url(&quot;assets/images/artistes/dynamit-la.png&quot;) center 35%/88% auto no-repeat #fff"><div style="font-family:'Bricolage Grotesque';font-weight:700;font-size:20px;color:#fff">Dynamit la</div><div style="font-weight:700;font-size:12px;color:#f2ba4c">réseaux ↗</div></a>
+        <a class="artist" href="#" style="flex:none;width:230px;height:290px;position:relative;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;background:linear-gradient(180deg,transparent 55%,rgba(20,12,12,.92)),url(&quot;assets/images/artistes/bay-chabon.jpg&quot;) center/contain no-repeat #1b1617"><div style="font-family:'Bricolage Grotesque';font-weight:700;font-size:20px;color:#fff">Bay Chabon</div><div style="font-weight:700;font-size:12px;color:#f2ba4c">réseaux ↗</div></a>
+        <a class="artist" href="#" style="flex:none;width:230px;height:290px;position:relative;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;background:linear-gradient(180deg,transparent 55%,rgba(20,12,12,.92)),url(&quot;assets/images/artistes/kadanse.jpg&quot;) 38% center/cover"><div style="font-family:'Bricolage Grotesque';font-weight:700;font-size:20px;color:#fff">Ka'dansé</div><div style="font-weight:700;font-size:12px;color:#f2ba4c">réseaux ↗</div></a>
+        <a class="artist" href="https://www.facebook.com/ines.benkhelouf" target="_blank" rel="noopener" style="flex:none;width:230px;height:290px;position:relative;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;background:linear-gradient(180deg,transparent 55%,rgba(20,12,12,.92)),url(&quot;assets/images/artistes/ines.jpg&quot;) center 20%/cover"><div style="font-family:'Bricolage Grotesque';font-weight:700;font-size:20px;color:#fff">Ines</div><div style="font-weight:700;font-size:12px;color:#f2ba4c">réseaux ↗</div></a>
+        <a class="artist" href="https://www.facebook.com/p/K%C3%A8r-Maloya-61576017373388/?locale=fr_FR" target="_blank" rel="noopener" style="flex:none;width:230px;height:290px;position:relative;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;background:linear-gradient(180deg,transparent 55%,rgba(20,12,12,.92)),url(&quot;assets/images/artistes/ker-maloya.jpg&quot;) center 30%/contain no-repeat #fff"><div style="font-family:'Bricolage Grotesque';font-weight:700;font-size:20px;color:#fff">Kèr Maloya</div><div style="font-weight:700;font-size:12px;color:#f2ba4c">réseaux ↗</div></a>
+        <a class="artist" href="https://www.facebook.com/kaskadband.bordeaux" target="_blank" rel="noopener" style="flex:none;width:230px;height:290px;position:relative;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;background:linear-gradient(180deg,transparent 55%,rgba(20,12,12,.92)),url(&quot;assets/images/artistes/kaskad-band.jpg&quot;) 55% center/cover"><div style="font-family:'Bricolage Grotesque';font-weight:700;font-size:20px;color:#fff">Kaskad Band</div><div style="font-weight:700;font-size:12px;color:#f2ba4c">réseaux ↗</div></a>
+        <a class="artist" href="#" style="flex:none;width:230px;height:290px;position:relative;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;background:linear-gradient(180deg,transparent 55%,rgba(20,12,12,.92)),url(&quot;assets/images/artistes/placeholder-ambyans.jpg&quot;) center 30%/78% auto no-repeat #fff"><div style="font-family:'Bricolage Grotesque';font-weight:700;font-size:20px;color:#fff">Régine (Gwoka)</div><div style="font-weight:700;font-size:12px;color:#f2ba4c">réseaux ↗</div></a>
+        <a class="artist" href="#" style="flex:none;width:230px;height:290px;position:relative;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;background:linear-gradient(180deg,transparent 55%,rgba(20,12,12,.92)),url(&quot;assets/images/artistes/placeholder-ambyans.jpg&quot;) center 30%/78% auto no-repeat #fff"><div style="font-family:'Bricolage Grotesque';font-weight:700;font-size:20px;color:#fff">Dandy Crew</div><div style="font-weight:700;font-size:12px;color:#f2ba4c">réseaux ↗</div></a>
+        <a data-nocount class="artist" href="#" style="flex:none;width:230px;height:290px;position:relative;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;background:linear-gradient(180deg,transparent 55%,rgba(20,12,12,.92)),url(&quot;assets/images/artistes/placeholder-ambyans.jpg&quot;) center 30%/78% auto no-repeat #fff"><div style="font-family:'Bricolage Grotesque';font-weight:700;font-size:20px;color:#fff">Défilé de costume traditionnel</div><div style="font-weight:700;font-size:12px;color:#f2ba4c">réseaux ↗</div></a>
+        <a class="artist" href="#" style="flex:none;width:230px;height:290px;position:relative;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;background:linear-gradient(180deg,transparent 55%,rgba(20,12,12,.92)),url(&quot;assets/images/artistes/placeholder-ambyans.jpg&quot;) center 30%/78% auto no-repeat #fff"><div style="font-family:'Bricolage Grotesque';font-weight:700;font-size:20px;color:#fff">DJ DayanKilla</div><div style="font-weight:700;font-size:12px;color:#f2ba4c">réseaux ↗</div></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ JEUX & CONCOURS ============ -->
+  <!-- TODO QR codes : régénérer les QR définitifs (GCNA Experience, Capture et Gagne) ; vidéo définitive GCNA Experience -->
+  <section id="jeux" style="padding:40px clamp(16px,5vw,40px) 40px;text-align:center">
+    <p style="font-family:'Caveat',cursive;font-size:34px;color:#e11d54;margin:0">Jeux-concours 100 % gratuits</p>
+    <h2 style="font-size:clamp(30px,4vw,48px);font-weight:800;color:#fff">Jeux &amp; concours</h2>
+    <p style="font-size:15px;color:#b8a79b;margin:10px auto 0;max-width:60ch">Deux façons de vivre l'événement autrement. Le règlement complet est disponible sous chaque jeu.</p>
+  </section>
+
+  <section id="experience" style="padding:0 clamp(16px,5vw,40px) 84px;text-align:center">
+    <h3 style="font-size:clamp(26px,3.6vw,40px);font-weight:800;color:#fff;max-width:20ch;margin:0 auto 8px">Ne rate pas la GCNA Experience</h3>
+    <p style="font-size:16px;color:#b8a79b;max-width:60ch;margin:0 auto 28px">Jeu-concours 100 % gratuit : les gagnants suivent toute la journée les coulisses — organisation, technique, backstage, nos partenaires.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:28px;justify-content:center;align-items:center">
+    <div style="width:min(340px,80vw);margin:0;aspect-ratio:9/16;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:#000"><video src="assets/video/gcna-experience.mp4" controls playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;display:block"></video></div>
+      <div style="width:min(340px,80vw);background:#fff;border-radius:18px;padding:26px 24px;box-shadow:0 20px 50px rgba(0,0,0,.45);color:#201812;text-align:center">
+        <img src="assets/images/logo-gcna.png" alt="GCNA" style="height:44px;width:auto;display:block;margin:0 auto 10px">
+        <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:26px;line-height:1.05;color:#e11d54">GCNA Experience</div>
+        <div style="font-weight:600;font-size:13px;color:#7c6b53;margin:6px 0 16px">Jeu-concours 100 % gratuit</div>
+        <img src="assets/images/qr-gcna-experience.png" alt="QR code — participer à la GCNA Experience" style="width:200px;height:200px;display:block;margin:0 auto;border:8px solid #fff;outline:3px solid #f2ba4c;border-radius:6px">
+        <div style="font-family:'Caveat',cursive;font-size:24px;color:#201812;margin-top:16px">Scanne et vis les coulisses !</div>
+        <div style="font-size:12px;color:#7c6b53;margin-top:4px">Organisation · technique · backstage · partenaires</div>
+      </div>
+    </div>
+    <a href="https://www.helloasso.com/associations/association-ambyanstwopikal/evenements/gcna-experience" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;margin-top:26px;background:#e11d54;color:#fff;font-weight:700;font-size:15px;padding:15px 28px;border-radius:999px">Je participe (gratuit) ↗</a>
+    <p class="legal-note"><a href="reglement.html#gcna-experience">Règlement du jeu-concours</a></p>
+  </section>
+
+  <!-- ============ CONCOURS PHOTO ============ -->
+  <section id="concours" style="padding:0 clamp(16px,5vw,40px) 84px">
+    <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(24px,5vw,44px);align-items:center;background:#1e1414;border:1px solid rgba(255,255,255,.08);border-radius:22px;padding:clamp(22px,5vw,44px)">
+      <div>
+        <p style="font-family:'Caveat',cursive;font-size:28px;color:#f2ba4c;margin:0">Concours photo &amp; vidéo 📸</p>
+        <h3 style="font-size:clamp(28px,3.6vw,46px);font-weight:800;color:#fff">Capture et Gagne</h3>
+        <p style="font-size:16px;line-height:1.6;color:#b8a79b;margin:14px 0 20px;max-width:46ch">Le concours photo et vidéo d'Ambyans Twopikal. Relève les défis photo et vidéo pendant l'événement : le jury choisit les gagnants.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px">
+          <span style="padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:#f5ece6;font-weight:600;font-size:14px">1. Scanne le QR code</span>
+          <span style="padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:#f5ece6;font-weight:600;font-size:14px">2. Relève les défis</span>
+          <span style="padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:#f5ece6;font-weight:600;font-size:14px">3. Le jury désigne les gagnants</span>
+        </div>
+        <a href="https://www.helloasso.com/associations/association-ambyanstwopikal/evenements/concours-capture-et-gagne" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;margin-top:24px;background:#e11d54;color:#fff;font-weight:700;font-size:15px;padding:14px 24px;border-radius:999px">Je participe au concours ↗</a>
+        <p class="legal-note"><a href="reglement.html#capture-et-gagne">Règlement du jeu-concours</a></p>
+      </div>
+      <div style="display:flex;justify-content:center">
+        <a href="https://www.helloasso.com/associations/association-ambyanstwopikal/evenements/concours-capture-et-gagne" target="_blank" rel="noopener" style="display:block;width:100%;max-width:340px"><img src="assets/images/qr-capture-et-gagne.png" alt="Capture et Gagne — QR code du concours photo et vidéo" style="width:100%;height:auto;display:block;border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,.45)"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESTAURATION ============ -->
+  <section id="restauration" style="padding:0 clamp(16px,5vw,40px) 84px">
+    <div style="max-width:1120px;margin:0 auto;background:#1e1414;border:1px solid rgba(255,255,255,.08);border-radius:22px;padding:clamp(22px,5vw,44px)">
+      <p style="font-family:'Caveat',cursive;font-size:28px;color:#f2ba4c;margin:0">À boire &amp; à manger</p>
+      <h2 style="font-size:clamp(28px,3.6vw,42px);font-weight:800;color:#fff;margin-bottom:6px">Restauration antillaise &amp; créole</h2>
+      <p style="font-size:15px;color:#b8a79b;margin-bottom:22px">Foodtruck, bar, traiteur — de quoi régaler tout le village.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px">
+        <span style="padding:9px 16px;border-radius:999px;background:#1f9d57;color:#fff;font-weight:600;font-size:14px">🚚 Foodtruck</span>
+        <span style="padding:9px 16px;border-radius:999px;background:#1f9d57;color:#fff;font-weight:600;font-size:14px">🍹 Bar</span>
+        <span style="padding:9px 16px;border-radius:999px;background:#1f9d57;color:#fff;font-weight:600;font-size:14px">Traiteur</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px">
+        <span style="padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:#f5ece6;font-weight:600;font-size:14px">Accras 🌶️</span>
+        <span style="padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:#f5ece6;font-weight:600;font-size:14px">Bokit</span>
+        <span style="padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:#f5ece6;font-weight:600;font-size:14px">Pain au beurre</span>
+        <span style="padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:#f5ece6;font-weight:600;font-size:14px">Boudin créole</span>
+        <span style="padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:#f5ece6;font-weight:600;font-size:14px">Ti-punch</span>
+        <span style="padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:#f5ece6;font-weight:600;font-size:14px">Schrubb</span>
+        <span style="padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:#f5ece6;font-weight:600;font-size:14px">Chocolat épicé</span>
+        <span style="padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:#f5ece6;font-weight:600;font-size:14px">Pâtés salés</span>
+        <span style="padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:#f5ece6;font-weight:600;font-size:14px">Jambon de Noël</span>
+        <span style="padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:#f5ece6;font-weight:600;font-size:14px">Spécialités créoles</span>
+      </div>
+      <p style="font-size:13px;color:#b8a79b;margin-bottom:18px">Le service d'alcool est réservé aux majeurs.</p>
+      <!-- TODO: lien HelloAsso « Réserve tes plats » (actuellement page générale de l'association) ; prix, moyens de paiement, allergènes -->
+      <a href="https://www.helloasso.com/associations/association-ambyanstwopikal" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#e11d54;color:#fff;font-weight:700;font-size:15px;padding:14px 24px;border-radius:999px">Réserve tes plats sur HelloAsso ↗</a>
+    </div>
+  </section>
+
+  <!-- ============ BOUTIQUE ============ -->
+  <section id="boutique" style="padding:0 clamp(16px,5vw,40px) 84px">
+    <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:44px;align-items:center">
+      <div>
+        <p style="font-family:'Caveat',cursive;font-size:28px;color:#f2ba4c;margin:0">La Boutique d'Ambyans 🛍️</p>
+        <h2 style="font-size:clamp(28px,3.6vw,44px);font-weight:800;color:#fff">Goodies &amp; livrets de chants</h2>
+        <p style="font-size:16px;line-height:1.6;color:#b8a79b;margin:14px 0 20px;max-width:44ch">Réserve tes goodies et ton livret de chants pour reprendre tous les cantiques avec le village le jour J.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px">
+          <span style="padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:#f5ece6;font-weight:600;font-size:14px">📖 Livret de chants</span>
+          <span style="padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:#f5ece6;font-weight:600;font-size:14px">👕 Goodies</span>
+        </div>
+        <a href="https://www.helloasso.com/associations/association-ambyanstwopikal/boutiques/goodies-livrets" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#f0b429;color:#201812;font-weight:700;font-size:15px;padding:14px 24px;border-radius:999px">Réserver sur HelloAsso ↗</a>
+      </div>
+      <div style="aspect-ratio:1/1;border-radius:18px;overflow:hidden;padding:20px;background:url(&quot;assets/images/boutique-fond.png&quot;);background-size:cover;background-position:center;border:1px solid rgba(255,255,255,.1)"><img src="assets/images/boutique-goodies.png" alt="Goodies GCNA 2026" style="width:100%;height:100%;object-fit:contain;display:block;transition:transform .45s cubic-bezier(.2,.7,.3,1)" style-hover="transform:scale(1.18)"></div>
+    </div>
+  </section>
+
+  <!-- ============ BÉNÉVOLES ============ -->
+  <section id="benevoles" style="padding:0 clamp(16px,5vw,40px) 84px">
+    <div style="max-width:1120px;margin:0 auto;background:linear-gradient(135deg,#123a2a,#0c2419);border-radius:22px;padding:clamp(32px,6vw,52px) clamp(20px,5vw,44px);text-align:center;border:1px solid rgba(31,157,87,.3)">
+      <p style="font-family:'Caveat',cursive;font-size:28px;color:#5fd39a;margin:0">Rejoins l'aventure 🙌</p>
+      <h2 style="font-size:clamp(28px,4vw,46px);font-weight:800;color:#fff">Deviens bénévole</h2>
+      <p style="font-size:16px;color:#c6e2d3;margin:14px auto 22px;max-width:52ch">On cherche des mains pour faire vivre le village créole : accueil, bar &amp; restauration, logistique, montage… Rejoins l'équipe et vis l'événement autrement !</p>
+      <!-- TODO: vérifier ce lien (atcan.fr) — remplacer par un formulaire / lien HelloAsso de l'association -->
+      <a href="https://atcan.fr" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#1f9d57;color:#fff;font-weight:700;font-size:16px;padding:15px 28px;border-radius:999px">Je m'inscris comme bénévole ↗</a>
+    </div>
+  </section>
+
+  <!-- ============ ILS EN PARLENT ============ -->
+  <section id="temoignages" style="padding:20px clamp(16px,5vw,40px) 84px">
+    <div style="max-width:1120px;margin:0 auto">
+      <!-- TODO: obtenir l'accord des personnes citées ; ajouter 2-3 autres avis (participants, artistes, partenaires) ; dater les articles de presse -->
+      <div style="text-align:center;margin-bottom:36px">
+        <p style="font-family:'Caveat',cursive;font-size:34px;color:#e11d54;margin:0">Ils en parlent</p>
+        <h2 style="font-size:clamp(28px,3.6vw,42px);font-weight:800;color:#fff">Retours &amp; revue de presse</h2>
+      </div>
+
+      <!-- témoignages -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:18px;margin-bottom:36px">
+        <div style="background:#1e1414;border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:26px">
+          <div style="color:#f2ba4c;font-size:22px;margin-bottom:10px">★★★★★</div>
+          <p style="font-size:16px;line-height:1.6;color:#e8dccf">« Super ambiance ! Merci et Bravo Ambyans Twopikal »</p>
+          <div style="display:flex;align-items:center;gap:12px;margin-top:18px">
+            <div style="width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#e11d54,#1f9d57);flex:none"></div>
+            <div><div style="font-weight:700;font-size:14px;color:#fff">Camille Sourgens</div><div style="font-size:12px;color:#8f8078">Édition précédente</div></div>
+          </div>
+        </div>
+        <div style="background:#1e1414;border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:26px">
+          <div style="color:#f2ba4c;font-size:22px;margin-bottom:10px">★★★★★</div>
+          <p style="font-size:16px;line-height:1.6;color:#e8dccf">« Très belle soirée et belle ambiance tropicale »</p>
+          <div style="display:flex;align-items:center;gap:12px;margin-top:18px">
+            <div style="width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#f2ba4c,#1f9d57);flex:none"></div>
+            <div><div style="font-weight:700;font-size:14px;color:#fff">Christian Sourgens</div><div style="font-size:12px;color:#8f8078">Édition précédente</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- revue de presse -->
+      <p style="font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#e11d54;margin:0 0 16px">Revue de presse · édition précédente</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+        <a href="https://www.sudouest.fr/gironde/lormont/lormont-ambiance-de-folie-rythmee-coloree-et-festive-a-la-sauce-caribeenne-27180966.php" target="_blank" rel="noopener" style="display:block;background:#1e1414;border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;color:inherit">
+          <div style="position:relative;height:200px;background:url(&quot;assets/images/presse-sud-ouest.avif&quot;) center/cover"><span style="position:absolute;left:14px;bottom:14px;background:#fff;border-radius:6px;padding:4px 10px;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:15px;color:#c8102e">Sud Ouest</span></div>
+          <div style="padding:18px"><div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8f8078;margin-bottom:6px">Sud Ouest · Lormont</div><div style="font-weight:700;font-size:16px;color:#fff;line-height:1.3">Lormont : Ambiance de folie, rythmée, colorée et festive à la sauce caribéenne</div><div style="margin-top:10px;font-weight:700;font-size:13px;color:#f2ba4c">Lire l'article ↗</div></div>
+        </a>
+        <a href="https://www.martinique.franceantilles.fr/actualite/culture/en-images-bay-chabon-lart-de-faire-monter-les-chante-nwel-a-bordeaux-1062727.php" target="_blank" rel="noopener" style="display:block;background:#1e1414;border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;color:inherit">
+          <div style="position:relative;height:200px;background:url(&quot;assets/images/presse-france-antilles.webp&quot;) center 30%/cover"><span style="position:absolute;left:14px;bottom:14px;background:#fff;border-radius:6px;padding:4px 10px;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:15px;color:#003f7f">France-Antilles Martinique</span></div>
+          <div style="padding:18px"><div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8f8078;margin-bottom:6px">France-Antilles Martinique</div><div style="font-weight:700;font-size:16px;color:#fff;line-height:1.3">[EN IMAGES] Bay Chabon, l'art de faire monter les chanté Nwel à Bordeaux – Martinique</div><div style="margin-top:10px;font-weight:700;font-size:13px;color:#f2ba4c">Lire l'article ↗</div></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PARTENAIRES (carrousel) ============ -->
+  <section style="padding:20px clamp(16px,5vw,40px) 84px;text-align:center">
+    <h2 style="font-size:clamp(24px,3vw,36px);font-weight:800;color:#fff;margin-bottom:28px">Cet événement est porté par</h2>
+    <div style="max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px">
+        <div style="height:96px;border-radius:14px;display:flex;align-items:center;justify-content:center;padding:14px;background:#fff"><img src="assets/images/partenaires/lormont.webp" alt="Ville de Lormont" style="max-height:100%;max-width:100%;object-fit:contain"></div>
+        <div style="height:96px;border-radius:14px;display:flex;align-items:center;justify-content:center;padding:14px;background:#fff"><img src="assets/images/partenaires/credit-mutuel.jpg" alt="Crédit Mutuel du Sud-Ouest" style="max-height:100%;max-width:100%;object-fit:contain"></div>
+        <div style="height:96px;border-radius:14px;display:flex;align-items:center;justify-content:center;padding:14px;background:#fff"><img src="assets/images/partenaires/maif.png" alt="MAIF" style="max-height:100%;max-width:100%;object-fit:contain"></div>
+        <div style="height:96px;border-radius:14px;display:flex;align-items:center;justify-content:center;padding:14px;background:#fff"><img src="assets/images/partenaires/sainely.jpg" alt="Sainely" style="max-height:100%;max-width:100%;object-fit:contain"></div>
+    </div>
+  </section>
+
+  <!-- ============ HASHTAG ============ -->
+  <section style="background:#f5ece6;color:#201812;padding:64px clamp(16px,5vw,40px);text-align:center">
+    <h2 style="font-size:clamp(32px,5vw,58px);font-weight:800;color:#e11d54">#GrandChantéNwèl</h2>
+    <p style="font-size:16px;color:#7c6b53;margin-top:10px">Le hashtag officiel pour rester connecté et partager tes plus beaux moments.</p>
+  </section>
+
+  <!-- ============ GALERIE (bande photo) ============ -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:0">
+    <div style="position:relative;aspect-ratio:3/4;overflow:hidden;display:flex;align-items:center;justify-content:center"><div data-parallax="0.13" style="position:absolute;inset:-16% 0;background:url(&quot;assets/images/galerie-1.jpg&quot;);background-size:cover;background-position:center;will-change:transform"></div></div>
+    <div style="position:relative;aspect-ratio:3/4;overflow:hidden;display:flex;align-items:center;justify-content:center"><div data-parallax="0.2" style="position:absolute;inset:-22% 0;background:url(&quot;assets/images/galerie-2.jpg&quot;);background-size:cover;background-position:center;will-change:transform"></div></div>
+    <div style="position:relative;aspect-ratio:3/4;overflow:hidden;display:flex;align-items:center;justify-content:center"><div data-parallax="0.13" style="position:absolute;inset:-16% 0;background:url(&quot;assets/images/bande-photo.jpg&quot;);background-size:cover;background-position:center;will-change:transform"></div></div>
+    <div style="position:relative;aspect-ratio:3/4;overflow:hidden;display:flex;align-items:center;justify-content:center"><div data-parallax="0.2" style="position:absolute;inset:-22% 0;background:url(&quot;assets/images/galerie-4.jpg&quot;);background-size:cover;background-position:center;will-change:transform"></div></div>
+  </div>
+
+  <!-- ============ CLOSING ============ -->
+  <section style="padding:80px clamp(16px,5vw,40px);text-align:center">
+    <h2 style="font-size:clamp(34px,6vw,72px);font-weight:800;color:#fff">L'ambyans va monté ! 🔥</h2>
+    <p style="font-size:17px;color:#b8a79b;margin-top:12px">Samedi 19 décembre 2026 · de 11h00 à 01h00</p>
+    <button data-action="openSaveDate" style="margin-top:24px;border:none;cursor:pointer;background:#e11d54;color:#fff;font-weight:700;font-size:16px;padding:16px 30px;border-radius:999px">Je note la date</button>
+  </section>
+
+  <!-- ============ INFOS PRATIQUES & FAQ ============ -->
+  <section id="infos" style="padding:20px clamp(16px,5vw,40px) 84px">
+    <div style="max-width:860px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:30px">
+        <p style="font-family:'Caveat',cursive;font-size:34px;color:#e11d54;margin:0">Infos pratiques</p>
+        <h2 style="font-size:clamp(28px,3.6vw,42px);font-weight:800;color:#fff">Tout savoir avant de venir</h2>
+      </div>
+      <!-- TODO FAQ à compléter quand les décisions sont prises : paiement sur place, stationnement, règle mineurs en soirée, intempéries, annulation / désinscription, détails PMR -->
+      <div class="faq">
+        <details><summary>L'entrée est-elle vraiment gratuite ?</summary><p>Oui, l'entrée est gratuite pour tous. L'inscription sur HelloAsso est conseillée pour garantir ta place. <a href="https://www.helloasso.com/associations/association-ambyanstwopikal/evenements/entree-grand-chante-nwel-d-ambyans-2026" target="_blank" rel="noopener">Je m'inscris ↗</a></p></details>
+        <details><summary>Puis-je venir avec mes enfants ?</summary><p>Bien sûr, c'est un événement familial ! Un espace enfants (jeux, animations, père Noël) est ouvert de 14h00 à 18h00. Les enfants restent sous la responsabilité de leurs parents.</p></details>
+        <details><summary>À quelle heure venir ?</summary><p>À n'importe quelle heure entre 11h00 et 01h00. Le marché de Noël est ouvert de 11h00 à 23h00 et le grand spectacle Chanté Nwèl démarre à 20h00.</p></details>
+        <details><summary>Y a-t-il de la restauration et un bar ?</summary><p>Oui : foodtruck, bar et traiteur proposent des spécialités antillaises et créoles. Le service d'alcool est réservé aux majeurs. <a href="#restauration">Voir la restauration</a></p></details>
+        <details><summary>Comment venir ?</summary><p>L'événement a lieu à la salle Léo Lagrange, rue Lavergne, 33310 Lormont. Tu peux y venir en tram (lignes A/B) ou en bus, et la salle est accessible aux personnes à mobilité réduite. <a href="#lieu">Voir le plan</a></p></details>
+        <details><summary>Comment participer aux jeux-concours ou devenir bénévole ?</summary><p>Retrouve toutes les infos dans les sections <a href="#jeux">Jeux &amp; concours</a> et <a href="#benevoles">Bénévoles</a>.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LIEU (carte + contact) ============ -->
+  <section id="lieu" class="lieu" style="position:relative">
+    <div id="map-box" style="height:440px;background:#1e1414;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:24px">
+      <p style="color:#b8a79b;font-size:14px;max-width:44ch">La carte est fournie par Google Maps : en l'affichant, des données sont transmises à Google.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center">
+        <button type="button" data-action="loadMap" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2827.2680566208765!2d-0.5302148152430318!3d44.87719359783391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd552f32813c25a7%3A0x131b92cc20c70125!2sFoyer%20L%C3%A9o%20Lagrange!5e0!3m2!1sfr!2sfr!4v1783933287121!5m2!1sfr!2sfr" style="border:none;cursor:pointer;background:#e11d54;color:#fff;font-weight:700;font-size:15px;padding:13px 24px;border-radius:999px">Afficher la carte</button>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Salle+L%C3%A9o+Lagrange+Lormont" target="_blank" rel="noopener" style="border:1.5px solid rgba(255,255,255,.3);color:#fff;font-weight:600;font-size:15px;padding:12px 22px;border-radius:999px">Ouvrir dans Google Maps ↗</a>
+      </div>
+    </div>
+    <div class="lieu-card" style="background:#fff;color:#201812;border-radius:18px;padding:28px;box-shadow:0 20px 60px rgba(0,0,0,.4)">
+      <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:22px;color:#e11d54">Viens vibrer avec nous !</div>
+      <p style="font-weight:700;font-size:15px;margin:14px 0 2px">Salle Léo Lagrange</p>
+      <p style="color:#7c6b53;font-size:14px;margin-bottom:14px">rue Lavergne, 33310 Lormont</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px">
+        <span style="padding:7px 13px;border-radius:999px;border:1.5px solid #e6d9c2;font-weight:600;font-size:12px">♿ PMR</span>
+        <span style="padding:7px 13px;border-radius:999px;border:1.5px solid #e6d9c2;font-weight:600;font-size:12px">🚋 Tram A/B</span>
+        <span style="padding:7px 13px;border-radius:999px;border:1.5px solid #e6d9c2;font-weight:600;font-size:12px">🚌 Bus</span>
+      </div>
+      <!-- TODO: e-mail de contact définitif (adresse actuelle provisoire) -->
+      <a href="mailto:contact@grandchantenwel.fr" style="color:#e11d54;font-weight:700;font-size:14px">contact@grandchantenwel.fr</a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background:#0d0808;padding:56px clamp(16px,5vw,40px) 40px;text-align:center">
+    <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:20px;color:#fff;margin-bottom:8px"><span style="color:#e11d54">✦</span> Le Grand Chanté Nwèl d'Ambyans</div>
+    <div style="display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin:16px 0 20px">
+      <a href="#tradition" style="color:#b8a79b;font-weight:600;font-size:14px">La tradition</a>
+      <a href="#agenda" style="color:#b8a79b;font-weight:600;font-size:14px">Programme</a>
+      <a href="#artistes" style="color:#b8a79b;font-weight:600;font-size:14px">Artistes</a>
+      <a href="#inscription" style="color:#b8a79b;font-weight:600;font-size:14px">S'inscrire</a><a href="#restauration" style="color:#b8a79b;font-weight:600;font-size:14px">Restauration</a><a href="#boutique" style="color:#b8a79b;font-weight:600;font-size:14px">Boutique</a>
+      <a href="#benevoles" style="color:#b8a79b;font-weight:600;font-size:14px">Bénévoles</a>
+      <a href="#lieu" style="color:#b8a79b;font-weight:600;font-size:14px">Accès</a>
+    </div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="#" style="padding:9px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:#f5ece6;font-weight:600;font-size:13px">Facebook</a>
+      <a href="#" style="padding:9px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:#f5ece6;font-weight:600;font-size:13px">Instagram</a>
+      <a href="#" style="padding:9px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:#f5ece6;font-weight:600;font-size:13px">TikTok</a>
+      <a href="mailto:contact@grandchantenwel.fr" style="padding:9px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:#f5ece6;font-weight:600;font-size:13px">Contact</a>
+    </div>
+    <!-- TODO: liens Facebook / Instagram / TikTok de l'association (nav, menu mobile, pied de page : href="#") -->
+    <div class="legal-links">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="confidentialite.html">Confidentialité</a>
+      <a href="reglement.html">Règlement des jeux-concours</a>
+    </div>
+  </footer>
+
+  <!-- ============ SCROLL TO TOP ============ -->
+  <button data-action="scrollTop" aria-label="Remonter en haut" style="position:fixed;bottom:26px;right:26px;z-index:40;width:52px;height:52px;border-radius:50%;border:none;cursor:pointer;background:#e11d54;color:#fff;font-size:20px;box-shadow:0 10px 30px rgba(225,29,84,.45);display:flex;align-items:center;justify-content:center;transition:opacity .25s ease,transform .25s ease" class="totop"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- ============ MODAL HORAIRES ============ -->
+  <div data-if="showHoraires" hidden>
+    <div data-action="closeHoraires" data-backdrop role="dialog" aria-modal="true" aria-label="Grille horaire" style="position:fixed;inset:0;background:rgba(8,5,5,.72);display:flex;align-items:center;justify-content:center;z-index:60;padding:24px">
+      <div style="width:520px;max-width:100%;max-height:86vh;overflow:auto;background:#1e1414;border:1px solid rgba(255,255,255,.1);border-radius:20px;box-shadow:0 30px 80px rgba(0,0,0,.6)">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid rgba(255,255,255,.1);position:sticky;top:0;background:#1e1414">
+          <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:20px;color:#fff">🕑 Grille horaire</div>
+          <button data-action="closeHoraires" aria-label="Fermer" style="border:1px solid rgba(255,255,255,.2);background:transparent;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:17px;color:#fff">×</button>
+        </div>
+        <div style="padding:22px 24px">
+          <p style="font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#e11d54;margin:0 0 4px">Samedi 19 décembre · 11h00 → 01h00</p>
+          <p style="font-size:11px;color:#8f8078;margin:0 0 6px;font-style:italic">Programme sous réserve de validation</p>
+          <!-- TODO: créneau 18h00 – 20h00 à préciser (pause, repas, animation DJ ?) -->
+          <p style="font-size:13px;color:#f2ba4c;margin:0 0 16px">🎧 DJ DayanKilla mixe après chaque prestation</p>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;gap:12px;align-items:flex-start"><span style="min-width:104px;text-align:center;padding:7px 0;border-radius:8px;background:rgba(31,157,87,.12);border:1.5px solid #1f9d57;color:#5fd39a;font-weight:700;font-size:12px">11h00</span><div><div style="font-weight:700;font-size:14px;color:#fff">Ouverture</div></div></div>
+            <div style="display:flex;gap:12px;align-items:flex-start"><span style="min-width:104px;text-align:center;padding:7px 0;border-radius:8px;background:transparent;border:1.5px solid #e11d54;color:#e11d54;font-weight:700;font-size:12px">13h00</span><div><div style="font-weight:700;font-size:14px;color:#fff">DJ DayanKilla</div></div></div>
+            <div style="display:flex;gap:12px;align-items:flex-start"><span style="min-width:104px;text-align:center;padding:7px 0;border-radius:8px;background:transparent;border:1.5px solid #e11d54;color:#e11d54;font-weight:700;font-size:12px">14h00</span><div><div style="font-weight:700;font-size:14px;color:#fff">Kèr Maloya</div><div style="font-size:12px;color:#b8a79b">Groupe réunionnais</div></div></div>
+            <div style="display:flex;gap:12px;align-items:flex-start"><span style="min-width:104px;text-align:center;padding:7px 0;border-radius:8px;background:rgba(240,180,41,.12);border:1.5px solid #f2ba4c;color:#f2ba4c;font-weight:700;font-size:12px">14h00 – 18h00</span><div><div style="font-weight:700;font-size:14px;color:#f2ba4c">Déambulation de costumes traditionnels créoles</div></div></div>
+            <div style="display:flex;gap:12px;align-items:flex-start"><span style="min-width:104px;text-align:center;padding:7px 0;border-radius:8px;background:transparent;border:1.5px solid #e11d54;color:#e11d54;font-weight:700;font-size:12px">15h00</span><div><div style="font-weight:700;font-size:14px;color:#fff">Ines</div><div style="font-size:12px;color:#b8a79b">Danse orientale</div></div></div>
+            <div style="display:flex;gap:12px;align-items:flex-start"><span style="min-width:104px;text-align:center;padding:7px 0;border-radius:8px;background:transparent;border:1.5px solid #e11d54;color:#e11d54;font-weight:700;font-size:12px">16h00</span><div><div style="font-weight:700;font-size:14px;color:#fff">Danse urbaine</div></div></div>
+            <div style="display:flex;gap:12px;align-items:flex-start"><span style="min-width:104px;text-align:center;padding:7px 0;border-radius:8px;background:transparent;border:1.5px solid #e11d54;color:#e11d54;font-weight:700;font-size:12px">17h00</span><div><div style="font-weight:700;font-size:14px;color:#fff">Dynamit la</div><div style="font-size:12px;color:#b8a79b">Groupe de carnaval</div></div></div>
+            <div style="display:flex;gap:12px;align-items:flex-start"><span style="min-width:104px;text-align:center;padding:7px 0;border-radius:8px;background:transparent;border:1.5px solid #e11d54;color:#e11d54;font-weight:700;font-size:12px">18h00</span><div><div style="font-weight:700;font-size:14px;color:#fff">Kaskad Band</div><div style="font-size:12px;color:#b8a79b">Groupe congolais</div></div></div>
+            <div style="display:flex;gap:12px;align-items:flex-start"><span style="min-width:104px;text-align:center;padding:7px 0;border-radius:8px;background:transparent;border:1.5px solid #e11d54;color:#e11d54;font-weight:700;font-size:12px">20h00</span><div><div style="font-weight:700;font-size:14px;color:#fff">Chanté Nwèl</div><div style="font-size:12px;color:#b8a79b">Avec Régine (Gwoka) · Bay Chabon · Dynamit la · Ka'dansé · Dandy Crew · DJ DayanKilla</div></div></div>
+            <div style="display:flex;gap:12px;align-items:flex-start"><span style="min-width:104px;text-align:center;padding:7px 0;border-radius:8px;background:transparent;border:1.5px solid #e11d54;color:#e11d54;font-weight:700;font-size:12px">00h00 – 01h00</span><div><div style="font-weight:700;font-size:14px;color:#fff">DJ DayanKilla</div><div style="font-size:12px;color:#b8a79b">Final</div></div></div>
+            <div style="display:flex;gap:12px;align-items:flex-start"><span style="min-width:104px;text-align:center;padding:7px 0;border-radius:8px;background:#e11d54;border:1.5px solid #e11d54;color:#fff;font-weight:700;font-size:12px">01h00</span><div><div style="font-weight:700;font-size:14px;color:#fff">Fin</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MODAL SAVE THE DATE ============ -->
+  <div data-if="showSaveDate" hidden>
+    <div data-action="closeSaveDate" data-backdrop role="dialog" aria-modal="true" aria-label="Je note la date" style="position:fixed;inset:0;background:rgba(8,5,5,.72);display:flex;align-items:center;justify-content:center;z-index:60;padding:24px">
+      <div style="width:440px;max-width:100%;max-height:88vh;overflow:auto;background:#1e1414;border:1px solid rgba(255,255,255,.1);border-radius:20px;box-shadow:0 30px 80px rgba(0,0,0,.6)">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid rgba(255,255,255,.1);position:sticky;top:0;background:#1e1414">
+          <div style="font-family:'Bricolage Grotesque';font-weight:800;font-size:20px;color:#fff">Je note la date 🎄</div>
+          <button data-action="closeSaveDate" aria-label="Fermer" style="border:1px solid rgba(255,255,255,.2);background:transparent;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:17px;color:#fff">×</button>
+        </div>
+        <div style="padding:22px 24px">
+          <p style="color:#b8a79b;font-size:15px;margin-bottom:22px">Samedi 19 décembre 2026, dès 11h00 — Salle Léo Lagrange, Lormont.</p>
+          <div style="font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#e11d54;margin-bottom:10px">Ajouter à mon calendrier</div>
+          <div style="display:flex;gap:10px;margin-bottom:24px">
+            <button data-action="google" style="flex:1;border:1px solid rgba(255,255,255,.2);background:transparent;color:#f5ece6;cursor:pointer;font-weight:600;font-size:14px;padding:12px;border-radius:12px">Google Agenda</button>
+            <button data-action="ics" style="flex:1;border:1px solid rgba(255,255,255,.2);background:transparent;color:#f5ece6;cursor:pointer;font-weight:600;font-size:14px;padding:12px;border-radius:12px">Apple / Outlook (.ics)</button>
+          </div>
+          <div id="reminder-block" hidden>
+          <div style="font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#e11d54;margin-bottom:10px">Rappel par e-mail</div>
+          <div data-if="emailDone" hidden>
+            <div style="background:#123a2a;border:1px solid rgba(31,157,87,.4);border-radius:12px;padding:14px;color:#5fd39a;font-weight:600;font-size:14px;margin-bottom:24px">✓ Merci ! On t'enverra un rappel avant l'événement.</div>
+          </div>
+          <div data-if="emailNotDone">
+            <div style="display:flex;gap:8px;margin-bottom:8px">
+              <input id="email-input" type="email" autocomplete="email" aria-label="Adresse e-mail" placeholder="ton@email.fr" style="flex:1;border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:12px 14px;font-size:14px;background:#140c0c;font-family:inherit;color:#f5ece6">
+              <button data-action="submitEmail" style="border:none;background:#e11d54;color:#fff;font-weight:700;font-size:14px;padding:0 18px;border-radius:12px;cursor:pointer">Recevoir</button>
+            </div>
+            <label class="consent"><input type="checkbox" id="email-consent"> J'accepte que mon adresse e-mail soit utilisée pour m'envoyer ce rappel (voir la <a href="confidentialite.html" target="_blank" rel="noopener">politique de confidentialité</a>).</label>
+          </div>
+          </div>
+          <div style="font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#e11d54;margin-bottom:10px">Partager l'événement</div>
+          <button data-action="share" style="width:100%;border:1px solid rgba(255,255,255,.2);background:transparent;color:#f5ece6;cursor:pointer;font-weight:600;font-size:14px;padding:12px;border-radius:12px">Partager sur mes réseaux ↗</button>
+          <div data-if="shared" hidden>
+            <p style="margin-top:10px;color:#5fd39a;font-weight:600;font-size:13px;text-align:center">✓ Lien copié !</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/intro-particles.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>
