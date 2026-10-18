@@ -57,7 +57,7 @@
     var pl = $('#preloader');
     if (!pl || !root.classList.contains('has-preload')) { onDone(); return; }
     var fill = $('#pl-fill');
-    var MIN = reduceMotion ? 500 : 1100, MAX = 6000;   // durée mini (lisible) et maxi (garde-fou), en ms
+    var MIN = CFG.preloaderMin || 2000, MAX = Math.max(6000, MIN + 2000);   // durée mini (config.js) et maxi (garde-fou), en ms
     var t0 = Date.now(), loaded = 0, shown = 0, over = false;
     var images = ['assets/images/hero.jpg', 'assets/images/logo-gcna.png'];
     var total = images.length + 2;        // + polices + événement load
@@ -84,7 +84,7 @@
     (function frame() {
       if (over) return;
       var elapsed = Date.now() - t0;
-      var target = loaded / total;
+      var target = Math.min(loaded / total, elapsed / MIN);   // la barre se remplit sur la durée mini
       shown += (target - shown) * 0.08 + 0.002;           // progression lissée
       if (shown > target && target < 1) shown = target;
       shown = Math.min(shown, 1);
