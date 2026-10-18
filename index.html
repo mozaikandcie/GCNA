@@ -23,17 +23,21 @@
 <link rel="stylesheet" href="css/fontawesome.css">
 <link rel="stylesheet" href="css/styles.css">
 <script>
-/* Intro : affichée à la première visite seulement (sessionStorage), jamais en mouvement réduit.
-   Forcer avec ?intro=lettres ou ?intro=particules ; désactiver avec ?intro=aucune. */
+/* Preloader + intro : affichés à la première visite seulement (sessionStorage), jamais en mouvement réduit.
+   Intro : ?intro=lettres | particules (forcer) | aucune (couper). Preloader : ?preloader=aucune (couper). */
 (function(){try{
-  var q=new URLSearchParams(location.search).get('intro');
+  var h=document.documentElement,sp=new URLSearchParams(location.search);
+  var q=sp.get('intro'),pq=sp.get('preloader');
   var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var seen=sessionStorage.getItem('gcna-intro');
-  if(q==='aucune'||reduce||(seen&&q!=='lettres'&&q!=='particules'))return;
-  var h=document.documentElement;
-  h.classList.add('has-intro');
-  if(q==='particules')h.classList.add('intro-particles');
-  setTimeout(function(){h.classList.remove('has-intro')},7000); /* garde-fou si le JS échoue */
+  if(!reduce){
+    if(pq!=='aucune'&&!sessionStorage.getItem('gcna-preload')){h.classList.add('has-preload');}
+    if(q!=='aucune'&&(!sessionStorage.getItem('gcna-intro')||q==='lettres'||q==='particules')){
+      h.classList.add('has-intro');
+      if(q==='particules')h.classList.add('intro-particles');
+    }
+  }
+  /* garde-fou si le JS échoue : on libère la page */
+  setTimeout(function(){h.classList.remove('has-preload','has-intro')},15000);
 }catch(e){}})();
 </script>
 <script type="application/ld+json">
@@ -77,6 +81,13 @@
 </script>
 </head>
 <body>
+<div id="preloader" role="status" aria-live="polite" aria-label="Chargement du site">
+  <div class="pl-inner">
+    <img class="pl-logo" src="assets/images/logo-gcna.png" alt="" width="128" height="128">
+    <div class="pl-bar" aria-hidden="true"><span id="pl-fill"></span></div>
+    <p class="pl-text">L'ambyans arrive…</p>
+  </div>
+</div>
 <a class="skip" href="#main">Aller au contenu</a>
 
 <div id="intro" role="presentation" aria-hidden="true">

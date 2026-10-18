@@ -56,18 +56,33 @@ body.scrolled .totop{opacity:1;transform:none;pointer-events:auto}
 }
 
 /* Intro */
-#intro{display:none;position:fixed;inset:0;z-index:100;background:#0d0808;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:24px;text-align:center;cursor:pointer;animation:introOut .7s ease 3.5s forwards}
-html.has-intro{overflow:hidden}
+#intro{display:none;position:fixed;inset:0;z-index:100;background:#0d0808;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:24px;text-align:center;cursor:pointer}
+html.intro-run #intro{animation:introOut .7s ease 3.5s forwards}
+html.has-intro,html.has-preload{overflow:hidden}
 html.has-intro #intro{display:flex}
-html.intro-particles #intro{animation:introOut .5s ease 3.6s forwards}
+html.intro-particles.intro-run #intro{animation:introOut .5s ease 3.6s forwards}
 .intro-word{display:flex;justify-content:center;flex-wrap:wrap}
-.intro-word span{display:inline-block;white-space:pre;opacity:0;animation:introLetter .6s cubic-bezier(.2,.8,.2,1) forwards}
+.intro-word span{display:inline-block;white-space:pre;opacity:0}
+html.intro-run .intro-word span{animation:introLetter .6s cubic-bezier(.2,.8,.2,1) forwards}
 .intro-w1{font-family:'Caveat',cursive;font-size:clamp(34px,6vw,64px);color:#f2ba4c;line-height:1}
 .intro-w2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(52px,11vw,140px);color:#fff;line-height:.95;letter-spacing:-.02em}
 .intro-w3{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(40px,8vw,100px);color:#e11d54;line-height:1}
-.intro-line{width:min(240px,50vw);height:3px;margin-top:22px;background:linear-gradient(90deg,#e11d54,#f2ba4c,#1f9d57);transform-origin:left;transform:scaleX(0);animation:introLine 1s ease 1.4s forwards}
+.intro-line{width:min(240px,50vw);height:3px;margin-top:22px;background:linear-gradient(90deg,#e11d54,#f2ba4c,#1f9d57);transform-origin:left;transform:scaleX(0)}
+html.intro-run .intro-line{animation:introLine 1s ease 1.4s forwards}
 #intro canvas{width:100%;height:100%;display:block}
 html.intro-particles #intro .intro-word,html.intro-particles #intro .intro-line{display:none}
+
+/* Preloader (écran de chargement avant l'intro) */
+#preloader{display:none;position:fixed;inset:0;z-index:120;background:#0d0808;align-items:center;justify-content:center;opacity:1;transition:opacity .5s ease,visibility 0s linear 0s}
+html.has-preload #preloader{display:flex}
+#preloader.pl-out{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .5s ease,visibility 0s linear .5s}
+#preloader::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 45%,rgba(193,18,63,.32),rgba(31,157,87,.08) 45%,rgba(13,8,8,0) 70%);animation:introGlow 2.4s ease-in-out infinite}
+.pl-inner{position:relative;display:flex;flex-direction:column;align-items:center;gap:22px;padding:24px;text-align:center}
+.pl-logo{width:clamp(84px,16vw,128px);height:auto;animation:plFloat 2.2s ease-in-out infinite,introLogo .9s cubic-bezier(.2,.8,.2,1) both;filter:drop-shadow(0 10px 30px rgba(225,29,84,.35))}
+.pl-bar{width:min(240px,56vw);height:3px;border-radius:3px;background:rgba(255,255,255,.12);overflow:hidden}
+.pl-bar span{display:block;height:100%;background:linear-gradient(90deg,#e11d54,#f2ba4c,#1f9d57);transform-origin:left;transform:scaleX(0)}
+.pl-text{font-family:'Caveat',cursive;font-size:24px;color:#f2ba4c}
+@keyframes plFloat{0%,100%{translate:0 0}50%{translate:0 -8px}}
 
 /* Slider artistes */
 .mq.paused .mqtrack,.mq:focus-within .mqtrack{animation-play-state:paused}
@@ -118,6 +133,6 @@ html.intro-particles #intro .intro-word,html.intro-particles #intro .intro-line{
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .mqtrack{animation:none!important;overflow-x:auto}
-  #intro{display:none!important}
-  html.has-intro{overflow:auto}
+  #intro,#preloader{display:none!important}
+  html.has-intro,html.has-preload{overflow:auto}
 }

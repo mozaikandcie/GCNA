@@ -10,10 +10,10 @@
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
   var lastFocus = null;
 
-  /* ---------- Intro ---------- */
+  /* ---------- Intro (préparée au chargement, lancée après le preloader) ---------- */
   function initIntro() {
     var intro = $('#intro');
-    if (!intro || !root.classList.contains('has-intro')) return;
+    if (!intro || !root.classList.contains('has-intro')) return function () {};
     var particles = root.classList.contains('intro-particles');
     var timer;
     var stopParticles = null;
@@ -21,30 +21,77 @@
     function done() {
       clearTimeout(timer);
       if (stopParticles) stopParticles();
-      root.classList.remove('has-intro');
+      root.classList.remove('has-intro', 'intro-run');
       try { sessionStorage.setItem('gcna-intro', '1'); } catch (e) {}
     }
     intro.addEventListener('click', done);
 
-    if (particles && window.gcnaIntroParticles) {
-      var cv = document.createElement('canvas');
-      intro.appendChild(cv);
-      stopParticles = window.gcnaIntroParticles(cv, done);
-      timer = setTimeout(done, 6000);
-      return;
-    }
-    var i = 0;
-    $$('.intro-word', intro).forEach(function (w) {
-      var text = w.getAttribute('data-text');
-      w.textContent = '';
-      Array.prototype.forEach.call(text, function (c) {
-        var s = document.createElement('span');
-        s.textContent = c;
-        s.style.animationDelay = (0.25 + (i++) * 0.05) + 's';
-        w.appendChild(s);
+    if (!particles) {
+      var i = 0;
+      $$('.intro-word', intro).forEach(function (w) {
+        var text = w.getAttribute('data-text');
+        w.textContent = '';
+        Array.prototype.forEach.call(text, function (c) {
+          var s = document.createElement('span');
+          s.textContent = c;
+          s.style.animationDelay = (0.25 + (i++) * 0.05) + 's';
+          w.appendChild(s);
+        });
       });
+    }
+    return function start() {
+      root.classList.add('intro-run');
+      if (particles && window.gcnaIntroParticles) {
+        var cv = document.createElement('canvas');
+        intro.appendChild(cv);
+        stopParticles = window.gcnaIntroParticles(cv, done);
+        timer = setTimeout(done, 6000);
+      } else {
+        timer = setTimeout(done, 4200);
+      }
+    };
+  }
+
+  /* ---------- Preloader : progression réelle (polices, image du hero, logo, chargement de la page) ---------- */
+  function initPreloader(onDone) {
+    var pl = $('#preloader');
+    if (!pl || !root.classList.contains('has-preload')) { onDone(); return; }
+    var fill = $('#pl-fill');
+    var MIN = 1100, MAX = 6000;           // durée mini (lisible) et maxi (garde-fou), en ms
+    var t0 = Date.now(), loaded = 0, shown = 0, over = false;
+    var images = ['assets/images/hero.jpg', 'assets/images/logo-gcna.png'];
+    var total = images.length + 2;        // + polices + événement load
+
+    function tick() { loaded++; }
+    images.forEach(function (src) {
+      var im = new Image();
+      im.onload = im.onerror = tick;
+      im.src = src;
     });
-    timer = setTimeout(done, 4200);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(tick, tick); else tick();
+    if (document.readyState === 'complete') tick(); else window.addEventListener('load', tick);
+
+    function finish() {
+      if (over) return;
+      over = true;
+      fill.style.transform = 'scaleX(1)';
+      pl.classList.add('pl-out');
+      try { sessionStorage.setItem('gcna-preload', '1'); } catch (e) {}
+      setTimeout(onDone, 250);            // l'intro démarre pendant le fondu
+      setTimeout(function () { root.classList.remove('has-preload'); pl.remove(); }, 600);
+    }
+    setTimeout(finish, MAX);              // garde-fou indépendant de requestAnimationFrame
+    (function frame() {
+      if (over) return;
+      var elapsed = Date.now() - t0;
+      var target = loaded / total;
+      shown += (target - shown) * 0.08 + 0.002;           // progression lissée
+      if (shown > target && target < 1) shown = target;
+      shown = Math.min(shown, 1);
+      fill.style.transform = 'scaleX(' + shown.toFixed(3) + ')';
+      if ((loaded >= total && shown >= 0.995 && elapsed >= MIN) || elapsed >= MAX) return finish();
+      requestAnimationFrame(frame);
+    })();
   }
 
   /* ---------- Scroll : navbar, bouton retour, parallax ---------- */
@@ -268,7 +315,7 @@
 
   /* ---------- Init ---------- */
   document.addEventListener('DOMContentLoaded', function () {
-    initIntro();
+    initPreloader(initIntro());
     initMarquee();
     countArtists();
     onScroll();
