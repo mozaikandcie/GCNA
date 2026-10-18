@@ -81,12 +81,19 @@ html.has-preload #preloader{display:flex}
 .pl-logo{width:clamp(84px,16vw,128px);height:auto;animation:plFloat 2.2s ease-in-out infinite,introLogo .9s cubic-bezier(.2,.8,.2,1) both;filter:drop-shadow(0 10px 30px rgba(225,29,84,.35))}
 .pl-bar{width:min(240px,56vw);height:3px;border-radius:3px;background:rgba(255,255,255,.12);overflow:hidden}
 .pl-bar span{display:block;height:100%;background:linear-gradient(90deg,#e11d54,#f2ba4c,#1f9d57);transform-origin:left;transform:scaleX(0)}
-.pl-title{display:flex;flex-direction:column;align-items:center;gap:2px;animation:introRise .8s ease .15s both}
-.pl-title span{display:block}
+.pl-title{display:flex;flex-direction:column;align-items:center;gap:2px}
+/* Révélation ligne par ligne : 0,3 s → 0,8 s → 1,3 s (+0,7 s chacune), fin à ~2,0 s.
+   preloaderMin (js/config.js) = fin de l'animation + temps de lecture. */
+.pl-title span{display:block;opacity:0;animation:plLine .7s cubic-bezier(.2,.8,.2,1) both}
+.pl-t1{animation-delay:.3s!important}
+.pl-t2{animation-delay:.8s!important}
+.pl-t3{animation-delay:1.3s!important}
 .pl-t1{font-family:'Caveat',cursive;font-size:clamp(24px,4.4vw,34px);color:#f2ba4c;line-height:1}
 .pl-t2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,6.4vw,52px);color:#fff;line-height:.95;letter-spacing:-.02em}
 .pl-t3{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(24px,4.8vw,38px);color:#e11d54;line-height:1}
 @keyframes plFloat{0%,100%{translate:0 0}50%{translate:0 -8px}}
+@keyframes plLine{0%{opacity:0;transform:translateY(.5em);filter:blur(6px)}100%{opacity:1;transform:none;filter:blur(0)}}
+@keyframes plFade{from{opacity:0}to{opacity:1}}
 
 /* Slider artistes */
 .mq.paused .mqtrack,.mq:focus-within .mqtrack{animation-play-state:paused}
@@ -139,7 +146,8 @@ html.has-preload #preloader{display:flex}
   html:not(.motion-on) .mqtrack{animation:none!important;overflow-x:auto}
   html:not(.motion-on) #intro{display:none!important}
   /* preloader sobre : logo fixe, pas de halo ni de flottement */
-  html:not(.motion-on) .pl-logo,html:not(.motion-on) .pl-title{animation:none}
+  html:not(.motion-on) .pl-logo{animation:none}
+  html:not(.motion-on) .pl-title span{animation-name:plFade}   /* simple fondu, sans déplacement ni flou */
   html:not(.motion-on) #preloader::before{animation:none;opacity:.6}
   html:not(.motion-on) #preloader,html:not(.motion-on) #preloader.pl-out{transition-duration:.01s}
 }
