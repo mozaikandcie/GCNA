@@ -211,7 +211,7 @@
   var EVENT = {
     title: "Le Grand Chanté Nwèl d'Ambyans",
     desc: 'Là où Noël se chante aux couleurs des Antilles.',
-    place: 'Salle Léo Lagrange, rue Lavergne, 33310 Lormont',
+    place: 'Pôle culturel et sportif du Bois Fleuri, rue Lavergne, 33310 Lormont',
   };
   function googleCal() {
     var u = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
@@ -271,7 +271,7 @@
     f.style.cssText = 'border:0;display:block';
     f.setAttribute('allowfullscreen', '');
     f.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
-    f.title = 'Plan d\'accès — Salle Léo Lagrange, Lormont';
+    f.title = 'Plan d\'accès — Pôle culturel et sportif du Bois Fleuri, Lormont';
     box.replaceWith(f);
   }
 
