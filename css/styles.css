@@ -143,7 +143,11 @@ html.has-preload #preloader{display:flex}
 /* Mouvement réduit (réglage système) — sans effet si ?motion=on */
 @media (prefers-reduced-motion:reduce){
   html:not(.motion-on){scroll-behavior:auto}
-  html:not(.motion-on) .mqtrack{animation:none!important;overflow-x:auto}
+  /* slider figé : toutes les cartes visibles en grille (sinon celles hors écran seraient inaccessibles) */
+  html:not(.motion-on) .mqtrack{animation:none!important;width:auto!important;flex-wrap:wrap;justify-content:center;padding:0 clamp(16px,5vw,40px)!important}
+  html:not(.motion-on) .mqtrack .artist[aria-hidden]{display:none!important}
+  html:not(.motion-on) .mq{-webkit-mask-image:none!important;mask-image:none!important}
+  html:not(.motion-on) .mq-toggle{display:none}
   html:not(.motion-on) #intro{display:none!important}
   /* preloader sobre : logo fixe, pas de halo ni de flottement */
   html:not(.motion-on) .pl-logo{animation:none}
