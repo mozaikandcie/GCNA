@@ -136,6 +136,17 @@ html.has-preload #preloader{display:flex}
 .page h1{font-size:clamp(32px,5vw,48px);font-weight:800;color:#fff;margin-bottom:24px}
 .page h2{font-size:22px;margin:32px 0 10px;color:#fff}
 .page p,.page li{font-size:16px;line-height:1.7;color:#d8c9bd;margin-bottom:12px}
+.page h3{font-size:17px;margin:22px 0 8px;color:#f2ba4c;font-family:'Hanken Grotesk',system-ui,sans-serif;font-weight:700}
+.page .meta{font-size:13px;color:#8f8078;margin:-12px 0 20px}
+.page ul{padding-left:22px;margin-bottom:12px}
+.page a{text-decoration:underline;text-underline-offset:3px}
+.page code{background:#1e1414;padding:1px 6px;border-radius:6px;font-size:14px}
+.page .info{display:grid;grid-template-columns:minmax(140px,max-content) 1fr;gap:10px 18px;margin:0 0 16px}
+.page .info dt{font-weight:700;color:#fff}
+.page .info dd{margin:0;color:#d8c9bd}
+.page .back{margin-top:40px}
+.fill{background:#3a2412;color:#ffd98a;border:1px dashed #f0b429;padding:0 6px;border-radius:6px;font-size:.92em}
+@media (max-width:560px){.page .info{grid-template-columns:1fr;gap:2px}.page .info dd{margin-bottom:10px}}
 .page .todo{background:#3a2412;border:1px solid #f0b429;color:#ffd98a;border-radius:12px;padding:14px 18px;font-size:14px;margin-bottom:28px}
 .page-nav{position:fixed;top:0;left:0;right:0;background:#0d0808;border-bottom:1px solid rgba(255,255,255,.08);padding:16px clamp(16px,5vw,40px);z-index:30}
 .page-nav a{color:#fff;font-weight:700}
