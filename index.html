@@ -33,7 +33,8 @@
   var reduce=pref&&!mo;
   if(mo)h.classList.add('motion-on');
   if(pq!=='aucune'&&(mo||!sessionStorage.getItem('gcna-preload')))h.classList.add('has-preload');
-  if(!reduce&&q!=='aucune'&&(mo||q==='lettres'||q==='particules'||!sessionStorage.getItem('gcna-intro'))){
+  /* L'intro (titre animé) n'est plus jouée par défaut : le preloader affiche déjà le titre. Elle reste disponible avec ?intro=lettres ou ?intro=particules. */
+  if(!reduce&&(q==='lettres'||q==='particules')){
     h.classList.add('has-intro');
     if(q==='particules')h.classList.add('intro-particles');
   }

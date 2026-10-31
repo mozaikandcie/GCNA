@@ -1,7 +1,12 @@
 # Hostinger (Apache / LiteSpeed). Le cache est réglé dans assets/.htaccess, css/.htaccess et js/.htaccess.
 
-# Forcer HTTPS
 RewriteEngine On
+
+# www -> gcna.fr (une seule adresse pour Google et pour le preloader)
+RewriteCond %{HTTP_HOST} ^www\.gcna\.fr$ [NC]
+RewriteRule ^ https://gcna.fr%{REQUEST_URI} [L,R=301]
+
+# Forcer HTTPS
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
