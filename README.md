@@ -9,7 +9,6 @@ Site one-page de l'association Ambyans Twopikal (HTML / CSS / JS vanilla, sans b
 - `reminder.php` — rappel par e-mail (PHP, Hostinger uniquement) ; envoie l'adresse à contact@gcna.fr
 - `.htaccess` (+ `assets/`, `css/`, `js/`) — HTTPS, en-têtes de sécurité, cache (Hostinger)
 - `robots.txt`, `sitemap.xml` — référencement (domaine gcna.fr)
-- `vercel.json` — ancien déploiement Vercel, à retirer après la migration
 
 ## Hébergement
 Hostinger, domaine gcna.fr, déploiement Git depuis la branche `main`.

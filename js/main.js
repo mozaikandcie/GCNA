@@ -59,7 +59,7 @@
     var fill = $('#pl-fill');
     var MIN = CFG.preloaderMin || 2000, MAX = Math.max(6000, MIN + 2000);   // durée mini (config.js) et maxi (garde-fou), en ms
     var t0 = Date.now(), loaded = 0, shown = 0, over = false;
-    var images = ['assets/images/hero.jpg', 'assets/images/logo-gcna.png'];
+    var images = ['assets/images/hero.webp', 'assets/images/logo-gcna.png'];
     var total = images.length + 2;        // + polices + événement load
 
     function tick() { loaded++; }

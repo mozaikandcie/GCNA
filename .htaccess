@@ -26,6 +26,6 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
 
 # Fichiers non publics
-<FilesMatch "^(vercel\.json|README\.md|\.gitignore)$">
+<FilesMatch "^(README\.md|\.gitignore)$">
   Require all denied
 </FilesMatch>
