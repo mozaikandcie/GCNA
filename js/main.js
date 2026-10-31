@@ -207,7 +207,7 @@
 
   /* ---------- Calendrier / partage ---------- */
   function fmt(d) {
-    return d.getFullYear() + pad(d.getMonth() + 1) + pad(d.getDate()) + 'T' + pad(d.getHours()) + pad(d.getMinutes()) + '00';
+    return d.toISOString().replace(/[-:]|\.\d{3}/g, '');   // UTC : 20261219T100000Z
   }
   var EVENT = {
     title: "Le Grand Chanté Nwèl d'Ambyans",
