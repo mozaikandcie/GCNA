@@ -186,12 +186,13 @@
   function closeModals() {
     setIf('showHoraires', false);
     setIf('showSaveDate', false);
+    setIf('showPlats', false);
     root.style.overflow = '';
     if (lastFocus && lastFocus.focus) lastFocus.focus();
     lastFocus = null;
   }
   function modalOpen() {
-    return $$('[data-if="showHoraires"],[data-if="showSaveDate"]').some(function (e) { return !e.hidden; });
+    return $$('[data-if="showHoraires"],[data-if="showSaveDate"],[data-if="showPlats"]').some(function (e) { return !e.hidden; });
   }
 
   /* ---------- Menu mobile ---------- */
@@ -279,6 +280,8 @@
   var actions = {
     openSaveDate: function () { openModal('showSaveDate'); },
     openHoraires: function () { openModal('showHoraires'); },
+    openPlats: function () { openModal('showPlats'); },
+    closePlats: closeModals,
     closeSaveDate: closeModals,
     closeHoraires: closeModals,
     toggleMenu: function () { var m = $('#mobile-menu'); setMenu(m.hidden); },
